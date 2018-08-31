@@ -115,7 +115,7 @@ class GroupManager
                 if ($filename == $testPattern) {
                     $groups[] = $group;
                 }
-                if (strpos($filename . ':' . $test->getName(false), $testPattern) === 0) {
+                if (false !== strpos($testPattern, Descriptor::getTestFullName($test))) {
                     $groups[] = $group;
                 }
                 if ($test instanceof \PHPUnit\Framework\TestSuite\DataProvider) {
